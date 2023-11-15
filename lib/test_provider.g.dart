@@ -6,6 +6,22 @@ part of 'test_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+String _$titleHash() => r'62e203906aeaad75626fba8dae7a1eea0b1a33b8';
+
+/// 引数無しの一番シンプルなケース
+///
+/// Copied from [title].
+@ProviderFor(title)
+final titleProvider = AutoDisposeProvider<String>.internal(
+  title,
+  name: r'titleProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$titleHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef TitleRef = AutoDisposeProviderRef<String>;
 String _$labelHash() => r'da8c715683a5d6b5b9a5896532d0075c73813f2a';
 
 /// Copied from Dart SDK
@@ -29,16 +45,24 @@ class _SystemHash {
   }
 }
 
-/// See also [label].
+/// 引数ありのケース
+///
+/// Copied from [label].
 @ProviderFor(label)
 const labelProvider = LabelFamily();
 
-/// See also [label].
+/// 引数ありのケース
+///
+/// Copied from [label].
 class LabelFamily extends Family<String> {
-  /// See also [label].
+  /// 引数ありのケース
+  ///
+  /// Copied from [label].
   const LabelFamily();
 
-  /// See also [label].
+  /// 引数ありのケース
+  ///
+  /// Copied from [label].
   LabelProvider call({
     required String str1,
     int num = 1,
@@ -74,9 +98,13 @@ class LabelFamily extends Family<String> {
   String? get name => r'labelProvider';
 }
 
-/// See also [label].
+/// 引数ありのケース
+///
+/// Copied from [label].
 class LabelProvider extends AutoDisposeProvider<String> {
-  /// See also [label].
+  /// 引数ありのケース
+  ///
+  /// Copied from [label].
   LabelProvider({
     required String str1,
     int num = 1,
@@ -168,5 +196,22 @@ class _LabelProviderElement extends AutoDisposeProviderElement<String>
   @override
   int get num => (origin as LabelProvider).num;
 }
+
+String _$nameHash() => r'8d07ee2873c80c6eddfc9eac552da008ac07ae96';
+
+/// 非同期処理のケース
+///
+/// Copied from [name].
+@ProviderFor(name)
+final nameProvider = AutoDisposeFutureProvider<String>.internal(
+  name,
+  name: r'nameProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$nameHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef NameRef = AutoDisposeFutureProviderRef<String>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

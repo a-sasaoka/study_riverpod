@@ -18,7 +18,11 @@ void main() {
         child: MyApp(),
       ),
     );
+    // 非同期処理が終わるのを待つ
+    await tester.pumpAndSettle();
 
+    expect(find.text('タイトル'), findsOneWidget);
     expect(find.text('テスト1'), findsOneWidget);
+    expect(find.text('やまだたろう'), findsOneWidget);
   });
 }

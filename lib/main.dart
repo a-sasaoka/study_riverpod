@@ -18,24 +18,43 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final title = ref.watch(
+      titleProvider,
+    );
+
     final label = ref.watch(
       labelProvider(
         str1: 'テスト',
       ),
     );
 
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Example')),
-        body: Center(
-          child: Text(label),
-        ),
-      ),
+    final name = ref.watch(
+      nameProvider,
+    );
+
+    return name.when(
+      loading: CircularProgressIndicator.adaptive,
+      error: (err, stack) => Center(child: Text('error: $err')),
+      data: (name) {
+        return MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          home: Scaffold(
+            appBar: AppBar(title: Text(title)),
+            body: Center(
+              child: Column(
+                children: [
+                  Text(label),
+                  Text(name),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
