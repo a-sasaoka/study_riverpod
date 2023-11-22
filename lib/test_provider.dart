@@ -28,3 +28,13 @@ Future<String> name(NameRef ref) async {
   await Future.delayed(const Duration(seconds: 1), () {});
   return 'やまだたろう';
 }
+
+/// Streamのケース
+@riverpod
+Stream<String> count(CountRef ref) async* {
+  for (var i = 1; i <= 10; i++) {
+    // 5秒待つ
+    await Future.delayed(const Duration(seconds: 5), () {});
+    yield i.toString();
+  }
+}

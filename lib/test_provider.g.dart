@@ -213,5 +213,21 @@ final nameProvider = AutoDisposeFutureProvider<String>.internal(
 );
 
 typedef NameRef = AutoDisposeFutureProviderRef<String>;
+String _$countHash() => r'9630ded85c7d2bf9f6b0ee03bfc3e7c79bbb5329';
+
+/// Streamのケース
+///
+/// Copied from [count].
+@ProviderFor(count)
+final countProvider = AutoDisposeStreamProvider<String>.internal(
+  count,
+  name: r'countProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$countHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef CountRef = AutoDisposeStreamProviderRef<String>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

@@ -32,27 +32,40 @@ class MyApp extends ConsumerWidget {
       nameProvider,
     );
 
+    final count = ref.watch(
+      countProvider,
+    );
+
+    // FutureやStreamのProviderはwhenを使うこと状態に応じた処理が可能
     return name.when(
       loading: CircularProgressIndicator.adaptive,
       error: (err, stack) => Center(child: Text('error: $err')),
       data: (name) {
-        return MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
-          ),
-          home: Scaffold(
-            appBar: AppBar(title: Text(title)),
-            body: Center(
-              child: Column(
-                children: [
-                  Text(label),
-                  Text(name),
-                ],
+        return count.when(
+          loading: CircularProgressIndicator.adaptive,
+          error: (err, stack) => Center(child: Text('error: $err')),
+          // 複数の状態を待ちたい場合はwhenをネストするしか無い？
+          data: (count) {
+            return MaterialApp(
+              title: 'Flutter Demo',
+              theme: ThemeData(
+                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                useMaterial3: true,
               ),
-            ),
-          ),
+              home: Scaffold(
+                appBar: AppBar(title: Text(title)),
+                body: Center(
+                  child: Column(
+                    children: [
+                      Text(label),
+                      Text(name),
+                      Text(count),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
         );
       },
     );
