@@ -14,15 +14,13 @@ class Counter extends _$Counter {
 
   /// カウントアップする
   void increment() {
-    _counter++;
     // 変更した状態をstateに設定
-    state = _counter;
+    state = ++_counter;
   }
 
   /// カウントダウンする
   void decrement() {
-    _counter--;
     // 変更した状態をstateに設定
-    state = _counter;
+    state = --_counter;
   }
 }

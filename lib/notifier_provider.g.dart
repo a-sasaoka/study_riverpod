@@ -6,7 +6,7 @@ part of 'notifier_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$counterHash() => r'58ca1bf69613221d429049eb2735714a66e35780';
+String _$counterHash() => r'0559969ccf938bf9745c13f9043db2b81a771387';
 
 /// カウント数を管理する
 ///
