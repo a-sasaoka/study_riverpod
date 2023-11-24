@@ -19,18 +19,21 @@ void main() {
       ),
     );
 
+    // 非同期処理が終わるのを待つ
+    await tester.pumpAndSettle();
+
     // 初期表示
     expect(find.text('0'), findsOneWidget);
 
     // 「+」を2回クリックした後の確認
     await tester.tap(find.text('+'));
     await tester.tap(find.text('+'));
-    await tester.pump();
+    await tester.pumpAndSettle();
     expect(find.text('2'), findsOneWidget);
 
     // 「-」を1回クリックした後の確認
     await tester.tap(find.text('-'));
-    await tester.pump();
+    await tester.pumpAndSettle();
     expect(find.text('1'), findsOneWidget);
   });
 }

@@ -4,25 +4,41 @@ part 'notifier_provider.g.dart';
 
 /// カウント数を管理する
 @riverpod
-class Counter extends _$Counter {
+class AsyncCounter extends _$AsyncCounter {
   int _counter = 0;
 
   @override
-  int build() {
+  FutureOr<int> build() async {
+    // 1秒待つ
+    await Future.delayed(const Duration(seconds: 3), () {});
     return _counter;
   }
 
+  Future<int> _increment() async {
+    // 1秒待つ
+    await Future.delayed(const Duration(seconds: 1), () {});
+    return ++_counter;
+  }
+
   /// カウントアップする
-  void increment() {
-    _counter++;
+  Future<void> increment() async {
+    // stateをローディングに変更
+    state = const AsyncValue.loading();
     // 変更した状態をstateに設定
-    state = _counter;
+    state = await AsyncValue.guard(_increment);
+  }
+
+  Future<int> _decrement() async {
+    // 1秒待つ
+    await Future.delayed(const Duration(seconds: 1), () {});
+    return --_counter;
   }
 
   /// カウントダウンする
-  void decrement() {
-    _counter--;
+  Future<void> decrement() async {
+    // stateをローディングに変更
+    state = const AsyncValue.loading();
     // 変更した状態をstateに設定
-    state = _counter;
+    state = await AsyncValue.guard(_decrement);
   }
 }
