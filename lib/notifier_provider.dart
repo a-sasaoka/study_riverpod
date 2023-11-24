@@ -14,18 +14,16 @@ class AsyncCounter extends _$AsyncCounter {
     return _counter;
   }
 
-  Future<int> _increment() async {
-    // 1秒待つ
-    await Future.delayed(const Duration(seconds: 1), () {});
-    return ++_counter;
-  }
-
   /// カウントアップする
   Future<void> increment() async {
     // stateをローディングに変更
     state = const AsyncValue.loading();
     // 変更した状態をstateに設定
-    state = await AsyncValue.guard(_increment);
+    state = await AsyncValue.guard(() async {
+      // 1秒待つ
+      await Future.delayed(const Duration(seconds: 1), () {});
+      return ++_counter;
+    });
   }
 
   Future<int> _decrement() async {
@@ -39,6 +37,10 @@ class AsyncCounter extends _$AsyncCounter {
     // stateをローディングに変更
     state = const AsyncValue.loading();
     // 変更した状態をstateに設定
-    state = await AsyncValue.guard(_decrement);
+    state = await AsyncValue.guard(() async {
+      // 1秒待つ
+      await Future.delayed(const Duration(seconds: 1), () {});
+      return --_counter;
+    });
   }
 }
