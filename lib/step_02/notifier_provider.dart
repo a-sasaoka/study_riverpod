@@ -5,22 +5,18 @@ part 'notifier_provider.g.dart';
 /// カウント数を管理する
 @riverpod
 class Counter extends _$Counter {
-  int _counter = 0;
-
   @override
   int build() {
-    return _counter;
+    return 0;
   }
 
   /// カウントアップする
   void increment() {
-    // 変更した状態をstateに設定
-    state = ++_counter;
+    ++state;
   }
 
   /// カウントダウンする
   void decrement() {
-    // 変更した状態をstateに設定
-    state = --_counter;
+    --state;
   }
 }
