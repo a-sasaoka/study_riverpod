@@ -6,22 +6,21 @@ part of 'notifier_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$asyncCounterHash() => r'd2b9151bc2685c0165c8a754ec8aa1e260e344f6';
+String _$counterHash() => r'76b9926d7c67ec262fbc7927fb2b5c9d83154952';
 
 /// カウント数を管理する
 ///
-/// Copied from [AsyncCounter].
-@ProviderFor(AsyncCounter)
-final asyncCounterProvider =
-    AutoDisposeAsyncNotifierProvider<AsyncCounter, int>.internal(
-  AsyncCounter.new,
-  name: r'asyncCounterProvider',
+/// Copied from [Counter].
+@ProviderFor(Counter)
+final counterProvider = AutoDisposeNotifierProvider<Counter, int>.internal(
+  Counter.new,
+  name: r'counterProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$asyncCounterHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$counterHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$AsyncCounter = AutoDisposeAsyncNotifier<int>;
+typedef _$Counter = AutoDisposeNotifier<int>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
