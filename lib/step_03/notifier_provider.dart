@@ -9,7 +9,7 @@ class AsyncCounter extends _$AsyncCounter {
 
   @override
   FutureOr<int> build() async {
-    // 1秒待つ
+    // 3秒待つ
     await Future.delayed(const Duration(seconds: 3), () {});
     return _counter;
   }
@@ -24,12 +24,6 @@ class AsyncCounter extends _$AsyncCounter {
       await Future.delayed(const Duration(seconds: 1), () {});
       return ++_counter;
     });
-  }
-
-  Future<int> _decrement() async {
-    // 1秒待つ
-    await Future.delayed(const Duration(seconds: 1), () {});
-    return --_counter;
   }
 
   /// カウントダウンする
