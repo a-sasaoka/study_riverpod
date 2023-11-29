@@ -6,4 +6,4 @@ Riverpod学習用のリポジトリ.
 * step_02 : NotifierProviderで「状態」を購読・複雑に操作する
 * step_03 : AsyncNotifierProviderで「状態」を購読・複雑に操作する
 * step_04 : 再描画の範囲を検証する
- 
+* step_05 : ref.listenでProviderを購読する
