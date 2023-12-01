@@ -1,6 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'notifier_provider.g.dart';
+part 'notifier_provider_03.g.dart';
 
 /// カウント数を管理する
 @riverpod
