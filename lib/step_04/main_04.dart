@@ -262,7 +262,7 @@ class MyHomePage3 extends StatelessWidget {
                 // provider
                 final counter = ref.watch(counterProvider);
 
-                log('Called Consumer1 build');
+                log('Called MyHomePage3 Consumer1');
 
                 return Text(
                   '$counter',
@@ -283,7 +283,7 @@ class MyHomePage3 extends StatelessWidget {
                     // notifier
                     final notifier = ref.watch(counterProvider.notifier);
 
-                    log('Called Consumer2 build');
+                    log('Called MyHomePage3 Consumer2');
 
                     return TextButton(
                       style: TextButton.styleFrom(
@@ -310,7 +310,7 @@ class MyHomePage3 extends StatelessWidget {
                     // notifier
                     final notifier = ref.watch(counterProvider.notifier);
 
-                    log('Called Consumer3 build');
+                    log('Called MyHomePage3 Consumer3');
 
                     return TextButton(
                       style: TextButton.styleFrom(
@@ -373,9 +373,6 @@ class MyHomePage4 extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     log('Called MyHomePage4 build');
 
-    // provider
-    final counter = ref.watch(counterProvider);
-
     // notifier
     final notifier = ref.watch(counterProvider.notifier);
 
@@ -387,11 +384,20 @@ class MyHomePage4 extends ConsumerWidget {
       body: Center(
         child: Column(
           children: [
-            Text(
-              '$counter',
-              style: const TextStyle(
-                fontSize: 32,
-              ),
+            Consumer(
+              builder: (context, ref, child) {
+                // provider
+                final counter = ref.watch(counterProvider);
+
+                log('Called MyHomePage4 Consumer');
+
+                return Text(
+                  '$counter',
+                  style: const TextStyle(
+                    fontSize: 32,
+                  ),
+                );
+              },
             ),
             const SizedBox(
               height: 16,
