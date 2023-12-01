@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:study_riverpod/step_01/test_provider.dart';
+import 'package:study_riverpod/step_01/test_provider_01.dart';
 
 void main() {
   // Providerをアプリで使用するためにProviderScopeで囲む

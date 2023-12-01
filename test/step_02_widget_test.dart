@@ -8,7 +8,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:study_riverpod/step_02/main.dart';
+import 'package:study_riverpod/step_02/main_02.dart';
 
 void main() {
   testWidgets('Widget動作テスト', (WidgetTester tester) async {

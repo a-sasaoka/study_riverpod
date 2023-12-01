@@ -1,11 +1,10 @@
-// ignore: lines_longer_than_80_chars
-// ignore_for_file: public_member_api_docs, inference_failure_on_instance_creation
+// ignore_for_file: public_member_api_docs
 
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:study_riverpod/step_04/notifier_provider.dart';
+import 'package:study_riverpod/step_04/notifier_provider_04.dart';
 
 void main() {
   runApp(
@@ -54,7 +53,7 @@ class MyHomePage1 extends ConsumerWidget {
         child: Column(
           children: [
             Text(
-              counter.toString(),
+              '$counter',
               style: const TextStyle(
                 fontSize: 32,
               ),
@@ -115,7 +114,7 @@ class MyHomePage1 extends ConsumerWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
+                  MaterialPageRoute<void>(
                     builder: (context) => const MyHomePage2(),
                   ),
                 );
@@ -162,7 +161,7 @@ class _MyHomePage2State extends ConsumerState<MyHomePage2> {
         child: Column(
           children: [
             Text(
-              counter.toString(),
+              '$counter',
               style: const TextStyle(
                 fontSize: 32,
               ),
@@ -223,7 +222,7 @@ class _MyHomePage2State extends ConsumerState<MyHomePage2> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
+                  MaterialPageRoute<void>(
                     builder: (context) => const MyHomePage3(),
                   ),
                 );
@@ -266,7 +265,7 @@ class MyHomePage3 extends StatelessWidget {
                 log('Called Consumer1 build');
 
                 return Text(
-                  counter.toString(),
+                  '$counter',
                   style: const TextStyle(
                     fontSize: 32,
                   ),
@@ -347,7 +346,7 @@ class MyHomePage3 extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
+                  MaterialPageRoute<void>(
                     builder: (context) => const MyHomePage4(),
                   ),
                 );
@@ -389,7 +388,7 @@ class MyHomePage4 extends ConsumerWidget {
         child: Column(
           children: [
             Text(
-              counter.toString(),
+              '$counter',
               style: const TextStyle(
                 fontSize: 32,
               ),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'test_provider.dart';
+part of 'test_provider_01.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -22,7 +22,7 @@ final titleProvider = AutoDisposeProvider<String>.internal(
 );
 
 typedef TitleRef = AutoDisposeProviderRef<String>;
-String _$labelHash() => r'da8c715683a5d6b5b9a5896532d0075c73813f2a';
+String _$labelHash() => r'b404ed137fe622ae0077c6d7c08e86e562934650';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -213,7 +213,7 @@ final nameProvider = AutoDisposeFutureProvider<String>.internal(
 );
 
 typedef NameRef = AutoDisposeFutureProviderRef<String>;
-String _$countHash() => r'9630ded85c7d2bf9f6b0ee03bfc3e7c79bbb5329';
+String _$countHash() => r'15bf842f9a0e1fd1e92a757142e3cbaf3fc71c22';
 
 /// Streamのケース
 ///

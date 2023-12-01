@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:study_riverpod/step_03/notifier_provider.dart';
+import 'package:study_riverpod/step_03/notifier_provider_03.dart';
 
 void main() {
   runApp(
@@ -60,7 +60,7 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
             return Column(
               children: [
                 Text(
-                  counter.toString(),
+                  '$counter',
                   style: const TextStyle(
                     fontSize: 32,
                   ),
