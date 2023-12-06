@@ -39,7 +39,7 @@ class MyHomePage extends ConsumerStatefulWidget {
 }
 
 class _MyHomePageState extends ConsumerState<MyHomePage> {
-  void _timeProvider() {
+  Future<void> _timeProvider() async {
     // 強制的にProviderを更新
     ref.invalidate(timeProvider);
   }
@@ -55,38 +55,24 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Text(
-              time,
-              style: const TextStyle(
-                fontSize: 32,
-              ),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.yellow.shade800,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(100),
+      body: time.when(
+        loading: () => const CircularProgressIndicator.adaptive(),
+        error: (error, stackTrace) => Text('Error: $error, $stackTrace'),
+        data: (data) {
+          return RefreshIndicator(
+            onRefresh: _timeProvider,
+            child: ListView(
+              children: [
+                Text(
+                  data,
+                  style: const TextStyle(
+                    fontSize: 32,
                   ),
                 ),
-              ),
-              onPressed: _timeProvider,
-              child: const Text(
-                '更新',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              ],
             ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
