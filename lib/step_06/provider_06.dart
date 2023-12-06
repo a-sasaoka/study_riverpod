@@ -5,6 +5,7 @@ part 'provider_06.g.dart';
 
 /// 現在時刻を返す
 @riverpod
-String time(TimeRef ref) {
+Future<String> time(TimeRef ref) async {
+  await Future.delayed(const Duration(seconds: 1), () {});
   return DateFormat('HH:mm:ss').format(DateTime.now());
 }
