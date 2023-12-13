@@ -147,6 +147,98 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+            const SizedBox(
+              height: 16,
+            ),
+            Consumer(
+              builder: (context, ref, child) {
+                // 名前
+                final userName = ref
+                    .watch(userInfoProvider.select((value) => value.userName));
+
+                log('名前が変わった！');
+                return Text(
+                  userName,
+                  style: const TextStyle(
+                    fontSize: 32,
+                  ),
+                );
+              },
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Consumer(
+              builder: (context, ref, child) {
+                // notifier
+                final notifier = ref.watch(userInfoProvider.notifier);
+
+                return TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.yellow.shade800,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(100),
+                      ),
+                    ),
+                  ),
+                  onPressed: () => notifier.setUserName('鈴木　イチロー'),
+                  child: const Text(
+                    '名前を変える',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Consumer(
+              builder: (context, ref, child) {
+                // 年齢
+                final age =
+                    ref.watch(userInfoProvider.select((value) => value.age));
+
+                log('年齢が変わった！');
+                return Text(
+                  '$age',
+                  style: const TextStyle(
+                    fontSize: 32,
+                  ),
+                );
+              },
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Consumer(
+              builder: (context, ref, child) {
+                // notifier
+                final notifier = ref.watch(userInfoProvider.notifier);
+
+                return TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.yellow.shade800,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(100),
+                      ),
+                    ),
+                  ),
+                  onPressed: () => notifier.setAge(30),
+                  child: const Text(
+                    '年齢を変える',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
