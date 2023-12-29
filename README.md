@@ -11,6 +11,7 @@ Riverpod学習用のリポジトリ.
 * step_07 : .selectを使用して再構築の条件を制限する
 * step_08 : アイテムの選択状態やカウンターなどの単純な状態はStateProviderで管理する
 * step_09 : FutureProviderで非同期処理を購読する
+* step_10 : StreamProviderでStreamを購読する
 
 
 * 番外編 : Freezedを使ってImmutableなクラスを作成する
