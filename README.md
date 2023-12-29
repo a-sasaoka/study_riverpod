@@ -12,6 +12,7 @@ Riverpod学習用のリポジトリ.
 * step_08 : アイテムの選択状態やカウンターなどの単純な状態はStateProviderで管理する
 * step_09 : FutureProviderで非同期処理を購読する
 * step_10 : StreamProviderでStreamを購読する
+* step_11 : AutoDispose修飾子で、Providerを自動破棄させる
 
 
 * 番外編 : Freezedを使ってImmutableなクラスを作成する
