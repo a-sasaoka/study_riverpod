@@ -2,17 +2,17 @@
 
 Riverpod学習用のリポジトリ.
 
-* step_01 : riverpod_generatorを使用してProviderの生成を試す
-* step_02 : NotifierProviderで「状態」を購読・複雑に操作する
-* step_03 : AsyncNotifierProviderで「状態」を購読・複雑に操作する
-* step_04 : 再描画の範囲を検証する
-* step_05 : ref.listenでProviderを購読する
-* step_06 : ref.refresh/invalidateでプロバイダを更新し、最新の値を得る
-* step_07 : .selectを使用して再構築の条件を制限する
-* step_08 : アイテムの選択状態やカウンターなどの単純な状態はStateProviderで管理する
-* step_09 : FutureProviderで非同期処理を購読する
-* step_10 : StreamProviderでStreamを購読する
-* step_11 : AutoDispose修飾子で、Providerを自動破棄させる
+* [step_01 : riverpod_generatorを使用してProviderの生成を試す](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_01)
+* [step_02 : NotifierProviderで「状態」を購読・複雑に操作する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_02)
+* [step_03 : AsyncNotifierProviderで「状態」を購読・複雑に操作する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_03)
+* [step_04 : 再描画の範囲を検証する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_04)
+* [step_05 : ref.listenでProviderを購読する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_05)
+* [step_06 : ref.refresh/invalidateでプロバイダを更新し、最新の値を得る](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_06)
+* [step_07 : .selectを使用して再構築の条件を制限する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_07)
+* [step_08 : アイテムの選択状態やカウンターなどの単純な状態はStateProviderで管理する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_08)
+* [step_09 : FutureProviderで非同期処理を購読する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_09)
+* [step_10 : StreamProviderでStreamを購読する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_10)
+* [step_11 : AutoDispose修飾子で、Providerを自動破棄させる](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_11)
 
 
-* 番外編 : Freezedを使ってImmutableなクラスを作成する
+* [番外編 : Freezedを使ってImmutableなクラスを作成する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/freezed)
