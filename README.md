@@ -13,7 +13,7 @@ Riverpod学習用のリポジトリ.
 * [step_09 : FutureProviderで非同期処理を購読する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_09)
 * [step_10 : StreamProviderでStreamを購読する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_10)
 * [step_11 : AutoDispose修飾子で、Providerを自動破棄させる](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_11)
-* [step_12 : ProviderScopeでの状態上書きを使った書き方](https://github.com/a-sasaoka/study_riverpod/tree/feature/step_12)
+* [step_12 : ProviderScopeでの状態上書きを使った書き方](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_12)
 
 
 * [番外編 : Freezedを使ってImmutableなクラスを作成する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/freezed)
