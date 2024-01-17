@@ -2,7 +2,7 @@
 
 Riverpod学習用のリポジトリ.
 
-### riverpod_generatorを使用してProviderの生成を試す
+## riverpod_generatorを使用してProviderの生成を試す
 
 感覚を掴むために必要最低限のことだけやってみる
 
