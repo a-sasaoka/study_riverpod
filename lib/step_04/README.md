@@ -2,7 +2,7 @@
 
 Riverpod学習用のリポジトリ.
 
-### 再描画の範囲を検証する
+## 再描画の範囲を検証する
 
 * ConsumerWidgetはwatchしているプロバイダーの状態が変わるとbuildメソッドが呼び出される
 * ConsumerStatefulWidget（ConsumerState）もbuildメソッドが呼び出される
