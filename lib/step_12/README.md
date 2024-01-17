@@ -6,3 +6,4 @@ Riverpod学習用のリポジトリ.
 
 * ProviderScopeで囲むことで特定のWidgetに値を上書きしたProviderを渡すことができる
 * ProviderScopeの内と外でProviderは別々に管理される（それぞれ別の状態を保持する）
+* 上書きしなかったProviderはProviderScopeの内と外で同じものが使用される

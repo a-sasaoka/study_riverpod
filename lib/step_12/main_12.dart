@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Providerの定数をグローバルに宣言
 final testProvider = StateProvider((ref) => 0);
+final stringProvider = StateProvider((ref) => '初期値');
 
 void main() {
   runApp(
@@ -43,7 +44,8 @@ class MyHomePage extends ConsumerStatefulWidget {
 class _MyHomePageState extends ConsumerState<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    final text = ref.watch(testProvider);
+    final cnt = ref.watch(testProvider);
+    final text = ref.watch(stringProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -53,7 +55,8 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
       body: Center(
         child: Column(
           children: [
-            Text('$text'),
+            Text('$cnt'),
+            Text(text),
             TextButton(
               style: TextButton.styleFrom(
                 backgroundColor: Colors.yellow.shade800,
@@ -63,8 +66,10 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
                   ),
                 ),
               ),
-              onPressed: () =>
-                  ref.watch(testProvider.notifier).update((state) => state + 1),
+              onPressed: () {
+                ref.watch(testProvider.notifier).update((state) => state + 1);
+                ref.watch(stringProvider.notifier).update((state) => '更新1');
+              },
               child: const Text(
                 '+',
                 style: TextStyle(
@@ -91,11 +96,13 @@ class Page1 extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final text = ref.watch(testProvider);
+    final cnt = ref.watch(testProvider);
+    final text = ref.watch(stringProvider);
 
     return Column(
       children: [
-        Text('$text'),
+        Text('$cnt'),
+        Text(text),
         TextButton(
           style: TextButton.styleFrom(
             backgroundColor: Colors.yellow.shade800,
@@ -105,8 +112,10 @@ class Page1 extends ConsumerWidget {
               ),
             ),
           ),
-          onPressed: () =>
-              ref.watch(testProvider.notifier).update((state) => state + 1),
+          onPressed: () {
+            ref.watch(testProvider.notifier).update((state) => state + 1);
+            ref.watch(stringProvider.notifier).update((state) => '更新2');
+          },
           child: const Text(
             '+',
             style: TextStyle(
