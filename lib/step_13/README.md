@@ -1,0 +1,8 @@
+# study_riverpod
+
+Riverpod学習用のリポジトリ.
+
+## SharedPreferencesのインスタンスをProviderでキャッシュする
+
+* SharedPreferencesのインスタンス取得は非同期だが、毎回非同期で取得するよりもProviderでキャッシュした方が効率が良い
+* SharedPreferencesのインスタンスは状態が変わらないので一番基本的なProviderで機能的には十分である

@@ -2,6 +2,8 @@
 
 Riverpod学習用のリポジトリ.
 
+## 基本
+
 * [step_01 : riverpod_generatorを使用してProviderの生成を試す](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_01)
 * [step_02 : NotifierProviderで「状態」を購読・複雑に操作する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_02)
 * [step_03 : AsyncNotifierProviderで「状態」を購読・複雑に操作する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_03)
@@ -14,5 +16,11 @@ Riverpod学習用のリポジトリ.
 * [step_10 : StreamProviderでStreamを購読する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_10)
 * [step_11 : AutoDispose修飾子で、Providerを自動破棄させる](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_11)
 * [step_12 : ProviderScopeでの状態上書きを使った書き方](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_12)
+
+## 実践
+
+* [step_13 : SharedPreferencesのインスタンスをProviderでキャッシュする](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_13)
+
+## おまけ
 
 * [番外編 : Freezedを使ってImmutableなクラスを作成する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/freezed)
