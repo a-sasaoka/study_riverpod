@@ -38,6 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
+    super.initState();
+
     const user1 = User('妻', email: 'a@sample.com');
     const user2 = User('子', email: 'a@sample.com');
     const user3 = User('父', email: 'a@sample.com', isDelete: true);
@@ -45,8 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
     const userList = [user1, user2, user3];
 
     _user = const User('世帯主', email: 'a@sample.com', family: userList);
-
-    super.initState();
   }
 
   @override

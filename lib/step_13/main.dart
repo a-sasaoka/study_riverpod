@@ -70,10 +70,11 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
 
   @override
   void initState() {
+    super.initState();
+
     final prefs = ref.read(sharedPreferencesProvider);
     _cnt = prefs.getInt('cnt') ?? 0;
     prefs.setInt('cnt', _cnt + 1);
-    super.initState();
   }
 
   @override
