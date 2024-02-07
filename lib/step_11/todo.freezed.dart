@@ -163,7 +163,7 @@ class _$Todo11Impl with DiagnosticableTreeMixin implements _Todo11 {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Todo11Impl &&

@@ -20,6 +20,7 @@ Riverpod学習用のリポジトリ.
 ## 実践
 
 * [step_13 : SharedPreferencesのインスタンスをProviderでキャッシュする](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_13)
+* [step_14 : SharedPreferencesのインスタンスをProviderでキャッシュする（riverpod_generatorを使った場合）](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_14)
 
 ## おまけ
 
