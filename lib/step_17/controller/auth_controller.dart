@@ -51,9 +51,14 @@ class AuthController extends _$AuthController {
     }
   }
 
-  /// ログアウト
+  /// ログアウトする
   Future<void> logout() async {
     await _auth.signOut();
+  }
+
+  /// 表示名を変更する
+  Future<void> updateDisplayName(String displayName) async {
+    await state!.updateDisplayName(displayName);
   }
 }
 
