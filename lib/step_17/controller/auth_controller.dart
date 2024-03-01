@@ -58,7 +58,7 @@ class AuthController extends _$AuthController {
 
   /// 表示名を変更する
   Future<void> updateDisplayName(String displayName) async {
-    await state!.updateDisplayName(displayName);
+    await state?.updateDisplayName(displayName);
   }
 }
 
