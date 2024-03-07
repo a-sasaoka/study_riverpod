@@ -7,14 +7,14 @@ part of 'firestore_controller.dart';
 // **************************************************************************
 
 String _$firestoreControllerHash() =>
-    r'c505c016fd7affb20bb98ad5b89c935f66f11532';
+    r'50c97ec40330a56228baee9de757e292aa90a54f';
 
-/// ユーザー情報を扱うコントローラ
+/// Firestoreを扱うコントローラ
 ///
 /// Copied from [FirestoreController].
 @ProviderFor(FirestoreController)
-final firestoreControllerProvider = StreamNotifierProvider<FirestoreController,
-    QuerySnapshot<Map<String, dynamic>>>.internal(
+final firestoreControllerProvider = AutoDisposeStreamNotifierProvider<
+    FirestoreController, List<FirestoreItem>>.internal(
   FirestoreController.new,
   name: r'firestoreControllerProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -24,7 +24,6 @@ final firestoreControllerProvider = StreamNotifierProvider<FirestoreController,
   allTransitiveDependencies: null,
 );
 
-typedef _$FirestoreController
-    = StreamNotifier<QuerySnapshot<Map<String, dynamic>>>;
+typedef _$FirestoreController = AutoDisposeStreamNotifier<List<FirestoreItem>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

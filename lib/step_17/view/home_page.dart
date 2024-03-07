@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:study_riverpod/step_17/common/widget/common_widget.dart';
 import 'package:study_riverpod/step_17/controller/auth_controller.dart';
+import 'package:study_riverpod/step_17/view/firestore_page.dart';
 import 'package:study_riverpod/step_17/view/login_page.dart';
 
 /// ホーム画面クラス
@@ -64,6 +65,33 @@ class _HomePageState extends ConsumerState<HomePage> {
                     },
                     child: const Text(
                       '表示名変更',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  padding32(),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.yellow.shade800,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(100),
+                        ),
+                      ),
+                      fixedSize: const Size(192, 32),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (context) => const FirestorePage(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      'Firestore',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
