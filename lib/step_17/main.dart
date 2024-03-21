@@ -91,7 +91,7 @@ class _ContentAndDialog extends StatelessWidget {
                     ),
                   TextButton(
                     onPressed: () {
-                      // 本来であればここにStoreに飛ばす処理を郭
+                      // 本来であればここにStoreに飛ばす処理を書く
                       Navigator.of(context).pop();
                     },
                     child: const Text('アップデート'),
