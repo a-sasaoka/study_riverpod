@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -11,14 +12,32 @@ part 'update_request_controller.g.dart';
 /// RemoteConfigからアップデート情報を取得するコントローラ
 @Riverpod(keepAlive: true)
 class UpdateRequestController extends _$UpdateRequestController {
+  /// コンストラクタ
+  UpdateRequestController() {
+    // RemoteConfigの変更を監視
+    _remoteConfig.onConfigUpdated.listen((event) async {
+      await _remoteConfig.activate();
+      log('変更を検知');
+      // キャンセルフラグをリセット
+      ref.read(cancelControllerProvider.notifier).reset();
+
+      // stateをローディングに変更
+      state = const AsyncValue.loading();
+      // 変更した状態をstateに設定
+      state = await AsyncValue.guard(() async {
+        return _getRemoteConfigData();
+      });
+    });
+  }
+
+  /// RemoteConfigインスタンス
+  final _remoteConfig = FirebaseRemoteConfig.instance;
+
   @override
   Future<UpdateRequestType> build() async {
-    // RemoteConfigインスタンス取得
-    final remoteConfig = FirebaseRemoteConfig.instance;
-
     // タイムアウトとフェッチのインターバル時間を設定
     const interval = Duration.zero;
-    await remoteConfig.setConfigSettings(
+    await _remoteConfig.setConfigSettings(
       RemoteConfigSettings(
         fetchTimeout: const Duration(minutes: 1),
         minimumFetchInterval: interval,
@@ -26,10 +45,15 @@ class UpdateRequestController extends _$UpdateRequestController {
     );
 
     // アクティベート
-    await remoteConfig.fetchAndActivate();
+    await _remoteConfig.fetchAndActivate();
 
+    return _getRemoteConfigData();
+  }
+
+  /// RemoteConfigからアップデート情報を取得
+  Future<UpdateRequestType> _getRemoteConfigData() async {
     // RemoteConfigから情報を取得
-    final string = remoteConfig.getString('update_info');
+    final string = _remoteConfig.getString('update_info');
     if (string.isEmpty) {
       return UpdateRequestType.not;
     }
@@ -43,8 +67,9 @@ class UpdateRequestController extends _$UpdateRequestController {
     final appPackageInfo = await PackageInfo.fromPlatform();
     final currentVersion = Version.parse(appPackageInfo.version);
 
-    final enabledAt = entity.enabledAt;
+    // RemoteConfigに設定されているバージョンと適用日を取得
     final requiredVersion = Version.parse(entity.requiredVersion);
+    final enabledAt = entity.enabledAt;
 
     // 現在のバージョンより新しいバージョンが指定されているか
     final hasNewVersion = requiredVersion > currentVersion;
@@ -58,6 +83,25 @@ class UpdateRequestController extends _$UpdateRequestController {
     return entity.canCancel
         ? UpdateRequestType.cancelable
         : UpdateRequestType.forcibly;
+  }
+}
+
+/// アップデート情報のキャンセル有無を管理するコントローラ
+@Riverpod(keepAlive: true)
+class CancelController extends _$CancelController {
+  @override
+  bool build() {
+    return false;
+  }
+
+  /// キャンセル押下
+  void clickCancel() {
+    state = true;
+  }
+
+  /// 状態リセット
+  void reset() {
+    state = false;
   }
 }
 

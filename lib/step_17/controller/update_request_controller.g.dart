@@ -7,7 +7,7 @@ part of 'update_request_controller.dart';
 // **************************************************************************
 
 String _$updateRequestControllerHash() =>
-    r'2d31582728371c685ce727b11e5190dc4470dfaf';
+    r'3afbb5e0951dfb2fb0ce43682c52fd8d067ad29e';
 
 /// RemoteConfigからアップデート情報を取得するコントローラ
 ///
@@ -25,5 +25,23 @@ final updateRequestControllerProvider =
 );
 
 typedef _$UpdateRequestController = AsyncNotifier<UpdateRequestType>;
+String _$cancelControllerHash() => r'09595f17e82ae7f436cf948772fdb389390079d1';
+
+/// アップデート情報のキャンセル有無を管理するコントローラ
+///
+/// Copied from [CancelController].
+@ProviderFor(CancelController)
+final cancelControllerProvider =
+    NotifierProvider<CancelController, bool>.internal(
+  CancelController.new,
+  name: r'cancelControllerProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$cancelControllerHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$CancelController = Notifier<bool>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
