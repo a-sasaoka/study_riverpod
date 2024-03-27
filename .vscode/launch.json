@@ -1,0 +1,131 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "step_01",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_01/main_01.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_02",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_02/main_02.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_03",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_03/main_03.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_04",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_04/main_04.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_05",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_05/main_05.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_06",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_06/main.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_07",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_07/main_07.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_08",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_08/main_08.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_09",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_09/main_09.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_11",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_11/main.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_12",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_12/main_12.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_13",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_13/main.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_14",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_14/main.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_15",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_15/main.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_16",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_16/main.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_17",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_17/main.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "step_18",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/step_18/main.dart",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "freezed",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/freezed/main.dart",
+            "flutterMode": "debug"
+        }
+    ]
+}
