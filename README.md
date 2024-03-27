@@ -24,6 +24,7 @@ Riverpod学習用のリポジトリ.
 * [step_15 : StateNotifierProviderでTheme(ライト・ダーク)を切り替える](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_15)
 * [step_16 : MVVMモデルっぽい実装をStateNotifierProviderで実現する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_16)
 * [step_17 : Firebaseの各種サービスをRiverpodで管理する](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_17)
+* [step_18 : アプリのライフサイクルを監視するProvider](https://github.com/a-sasaoka/study_riverpod/tree/main/lib/step_18)
 
 ## おまけ
 
